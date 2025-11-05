@@ -68,7 +68,7 @@ $result = "  hello world  from alpine-php85 "
 echo $result; // "HELLO WORLD  FROM ALPINE-PHP85"
 ```
 
-> Requires the PHP 8.5 pipeline operator **|>**.
+- Requires the PHP 8.5 pipeline operator `|>`
 
 
 ## 🛠️ Building Locally
