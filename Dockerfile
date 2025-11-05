@@ -42,7 +42,14 @@ USER master
 
 # Prompt and aliases (dynamic hostname via \h)
 RUN cat << 'EOF' >> /home/master/.bashrc
-export PS1="\n\[\033[38;2;49;94;146m\]▍\[\033[38;2;255;95;71m\]▍\[\033[38;2;255;182;53m\]▍\[\033[0m\] \[\033[38;2;120;150;255m\]alpine-php8.5 \[\033[38;2;140;170;255m\]❱ \[\033[0m\]"
+export PS1="\n\
+\[\033[38;2;49;94;146m\]▍\
+\[\033[38;2;255;95;71m\]▍\
+\[\033[38;2;255;182;53m\]▍\
+\[\033[0m\] \
+\[\033[38;2;120;150;255m\]alpine-php8.5 \
+\[\033[38;2;140;170;255m\]❱ \
+\[\033[0m\] "
 alias ll="ls -Xalhv --color=auto --group-directories-first"
 alias vim="nvim"
 EOF
