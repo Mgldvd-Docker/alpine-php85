@@ -30,14 +30,29 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
+      - name: 🏅 Extract image metadata
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: ${{ env.REGISTRY }}/${{ secrets.DOCKERHUB_USERNAME }}/${{ env.IMAGE_NAME }}
+          tags: |
+            type=raw,value=latest
+            type=sha,format=long
+          labels: |
+            org.opencontainers.image.title=alpine-php85
+            org.opencontainers.image.description=Ubuntu base image with Vim installed via apt-get; Docker Hub overview: https://hub.docker.com/r/mgldvd/alpine-php85; source: https://github.com/Mgldvd-Docker/alpine-php85
+            org.opencontainers.image.url=https://github.com/Mgldvd-Docker/alpine-php85
+            org.opencontainers.image.source=https://github.com/Mgldvd-Docker/alpine-php85
+            org.opencontainers.image.documentation=https://hub.docker.com/r/mgldvd/alpine-php85
+
       - name: 🏅 Build and push image
         uses: docker/build-push-action@v6
         with:
           context: .
           push: true
-          tags: |
-            ${{ env.REGISTRY }}/${{ secrets.DOCKERHUB_USERNAME }}/${{ env.IMAGE_NAME }}:latest
-            ${{ env.REGISTRY }}/${{ secrets.DOCKERHUB_USERNAME }}/${{ env.IMAGE_NAME }}:${{ github.sha }}
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+          annotations: ${{ steps.meta.outputs.annotations }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
