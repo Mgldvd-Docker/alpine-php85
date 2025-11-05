@@ -37,10 +37,9 @@ jobs:
           images: ${{ env.REGISTRY }}/${{ secrets.DOCKERHUB_USERNAME }}/${{ env.IMAGE_NAME }}
           tags: |
             type=raw,value=latest
-            type=sha,format=long
           labels: |
             org.opencontainers.image.title=alpine-php85
-            org.opencontainers.image.description=Ubuntu base image with Vim installed via apt-get; Docker Hub overview: https://hub.docker.com/r/mgldvd/alpine-php85; source: https://github.com/Mgldvd-Docker/alpine-php85
+            org.opencontainers.image.description=Alpine base image with Bash tooling and PHP 8.5 packages; Docker Hub overview: https://hub.docker.com/r/mgldvd/alpine-php85; source: https://github.com/Mgldvd-Docker/alpine-php85
             org.opencontainers.image.url=https://github.com/Mgldvd-Docker/alpine-php85
             org.opencontainers.image.source=https://github.com/Mgldvd-Docker/alpine-php85
             org.opencontainers.image.documentation=https://hub.docker.com/r/mgldvd/alpine-php85
@@ -50,6 +49,7 @@ jobs:
         with:
           context: .
           push: true
+          platforms: linux/amd64,linux/arm64
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
           annotations: ${{ steps.meta.outputs.annotations }}
