@@ -1,6 +1,6 @@
 <!-- markdownlint-disable first-line-heading -->
 <p align="center">
-  <a href="https://hub.docker.com/r/mgldvd/alpine-php85" target="_blank"><img src=".github/assets/mgldvd-docker-banner.png" alt="Mgldvd-Docker" height="auto" /></a>
+  <a href="https://hub.docker.com/r/mgldvd/alpine-php85" target="_blank"><img src="https://raw.githubusercontent.com/Mgldvd-Docker/alpine-php85/refs/heads/master/.github/assets/mgldvd-docker-banner.png" alt="Mgldvd-Docker" height="auto" /></a>
 </p>
 
 # Alpine PHP 8.5 Docker Image
