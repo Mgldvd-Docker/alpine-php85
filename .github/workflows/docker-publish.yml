@@ -56,5 +56,14 @@ jobs:
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
+      - name: 🏅 Update Docker Hub overview
+        uses: peter-evans/dockerhub-description@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+          repository: mgldvd/alpine-php85
+          short-description: Alpine PHP 8.5 image with Bash tooling
+          readme-filepath: ./README.md
+
       - name: 🏅 Log out from Docker Hub
         run: docker logout
