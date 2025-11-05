@@ -21,6 +21,8 @@ This repo builds the `mgldvd/alpine-php85` Docker image on top of `alpine:latest
 
 ## 🧭 Overview
 
+![demo](https://raw.githubusercontent.com/Mgldvd-Docker/alpine-php85/refs/heads/master/.github/assets/video.gif)
+
 Single Dockerfile using Alpine + Vim, published by the GitHub Actions workflow on `deploy/hub`.
 
 ### 📦 Packages installed via `apk add`
