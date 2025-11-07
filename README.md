@@ -101,7 +101,7 @@ docker run --rm -it -v "$PWD:/app" mgldvd/alpine-php85 bash
 
 ### 🐳 Docker Compose
 
-Use the bundled [compose.yml](https://raw.githubusercontent.com/Mgldvd-Docker/alpine-php85/refs/heads/master/Dockerfile) to launch an interactive shell with your local `app/` directory mounted into the container:
+Use the bundled [compose.yml](https://raw.githubusercontent.com/Mgldvd-Docker/alpine-php85/refs/heads/master/compose.yml) to launch an interactive shell with your local `app/` directory mounted into the container:
 
 ```sh
 mkdir app
