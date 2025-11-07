@@ -55,12 +55,13 @@ Single Dockerfile using Alpine + Vim, published by the GitHub Actions workflow o
 ### 🧪 PHP 8.5 Example
 
 ```sh
-docker run --rm -it -v "$PWD:/app" mgldvd/alpine-php85
+docker run --rm -it -v "$PWD:/app" mgldvd/alpine-php85 bash
 ```
 
 ```sh
 # inside the container shell
 echo "<?php echo 'hello from alpine-php85'.PHP_EOL;" > hello.php
+
 php ./hello.php
 ```
 
@@ -83,18 +84,19 @@ echo $result; // "HELLO WORLD  FROM ALPINE-PHP85"
 Clone the project and build the image using the provided Dockerfile:
 
 ```sh
-# Clone the repo
 git clone https://github.com/Mgldvd-Docker/alpine-php85.git
-cd alpine-php85
 
-# Build the image locally
+cd alpine-php85
+```
+
+```bash
 docker build -t mgldvd/alpine-php85:local .
 ```
 
 Run the container to verify the build:
 
 ```sh
-docker run --rm -it -v "$PWD:/app" mgldvd/alpine-php85
+docker run --rm -it -v "$PWD:/app" mgldvd/alpine-php85 bash
 ```
 
 ## 🚀 Publishing Workflow
