@@ -1,6 +1,8 @@
 name: Publish Docker image
 
 on:
+  schedule:
+    - cron: '0 0 * * 0'
   push:
     branches:
       - deploy/hub
@@ -50,11 +52,10 @@ jobs:
           context: .
           push: true
           platforms: linux/amd64,linux/arm64
+          no-cache: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
           annotations: ${{ steps.meta.outputs.annotations }}
-          cache-from: type=gha
-          cache-to: type=gha,mode=max
 
       - name: 🏅 Update Docker Hub overview
         uses: peter-evans/dockerhub-description@v3

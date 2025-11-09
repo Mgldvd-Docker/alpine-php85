@@ -13,11 +13,12 @@
 
 **Docker + PHP 8.5**
 
-
 This repo builds the `mgldvd/alpine-php85` Docker image on top of `alpine:latest`, adding Bash tooling and PHP 8.5.
 
 - **GitHub**: https://github.com/Mgldvd-Docker/alpine-php85
 - **Docker Hub**: https://hub.docker.com/r/mgldvd/alpine-php85
+
+> ⚠️ **Warning:**  The GitHub Action rebuilds and republishes the image every Sunday to keep it up to date with the latest PHP 8.5 version.
 
 ## 🧭 Overview
 
