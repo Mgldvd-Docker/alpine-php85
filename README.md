@@ -96,7 +96,7 @@ docker build -t mgldvd/alpine-php85:local .
 Run the container to verify the build:
 
 ```sh
-docker run --rm -it -v "$PWD:/app" mgldvd/alpine-php85 bash
+docker run --rm -it -v "$PWD:/app" mgldvd/alpine-php85:local bash
 ```
 
 ### 🐳 Docker Compose
